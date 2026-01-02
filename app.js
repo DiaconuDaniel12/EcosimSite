@@ -78,62 +78,9 @@ function closeModal(){
   modal.classList.remove("show");
   modal.setAttribute("aria-hidden","true");
 }
-// Phantom detection (demo only)
-const phantomStatus = $("#phantomStatus");
-const btnCheckPhantom = $("#btnCheckPhantom");
-const btnConnectPhantom = $("#btnConnectPhantom");
-
-function renderPhantomStatus() {
-  if (!phantomStatus) return;
-  const provider = window?.solana;
-  if (provider && provider.isPhantom) {
-    phantomStatus.textContent =
-      "Phantom detected (demo only). Wallet connection and transactions are not enabled in this pre-launch build.";
-    phantomStatus.classList.remove("warn");
-  } else {
-    phantomStatus.textContent =
-      "Phantom wallet not detected. Install Phantom and reopen the modal, or tap Get Phantom.";
-    phantomStatus.classList.add("warn");
-  }
-}
-
-if (btnCheckPhantom) {
-  btnCheckPhantom.addEventListener("click", renderPhantomStatus);
-}
-
-if (btnConnectPhantom) {
-  btnConnectPhantom.addEventListener("click", async ()=>{
-    const provider = window?.solana;
-    if (!provider || !provider.isPhantom) {
-      if (phantomStatus) {
-        phantomStatus.textContent = "Phantom not detected. Install Phantom first (demo only).";
-        phantomStatus.classList.add("warn");
-      }
-      return;
-    }
-    try {
-      await provider.connect({ onlyIfTrusted: false });
-      if (phantomStatus) {
-        phantomStatus.textContent = "Phantom connected (demo only). No transactions are executed.";
-        phantomStatus.classList.remove("warn");
-      }
-    } catch (err) {
-      if (phantomStatus) {
-        phantomStatus.textContent = "Connection canceled or failed (demo only).";
-        phantomStatus.classList.add("warn");
-      }
-    }
-  });
-}
-
-function openModalWithPhantomCheck() {
-  renderPhantomStatus();
-  openModal();
-}
-
-$("#buyBtnTop")?.addEventListener("click", openModalWithPhantomCheck);
-$("#buyBtnHero")?.addEventListener("click", openModalWithPhantomCheck);
-$("#buyBtnToken")?.addEventListener("click", openModalWithPhantomCheck);
+$("#buyBtnTop")?.addEventListener("click", openModal);
+$("#buyBtnHero")?.addEventListener("click", openModal);
+$("#buyBtnToken")?.addEventListener("click", openModal);
 
 modal?.addEventListener("click", (e)=>{
   if(e.target && e.target.dataset.close) closeModal();

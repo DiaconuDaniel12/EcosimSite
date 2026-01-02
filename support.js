@@ -89,15 +89,18 @@ function initFlow(prefix) {
     if (!provider) {
       setStatus("Phantom not detected. Install Phantom.", true);
       if (resultEl) resultEl.innerHTML = `<a href="https://phantom.app" target="_blank" rel="noreferrer">Install Phantom</a>`;
+      alert("Phantom wallet not detected. Please install Phantom and refresh.");
       return;
     }
     try {
-      const res = await provider.connect();
+      const res = await provider.connect({ onlyIfTrusted: false });
       wallet = res.publicKey || provider.publicKey;
       setStatus(`Connected: ${wallet.toString()}`);
       if (resultEl) resultEl.textContent = "";
     } catch (e) {
-      setStatus("Connection cancelled.", true);
+      console.error("Phantom connect error:", e);
+      setStatus("Connection cancelled or failed.", true);
+      alert("Connection cancelled or failed. Try again.");
     }
   });
 
