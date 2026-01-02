@@ -661,24 +661,29 @@
     <div class="modal-backdrop" data-close="1"></div>
     <div class="modal-card" role="dialog" aria-modal="true" aria-label="Buy ECO">
       <div class="modal-head">
-        <div class="modal-title">Connect Phantom Wallet</div>
+        <div class="modal-title">Buy ECO</div>
         <button class="x" data-close="1">✕</button>
       </div>
       <div class="modal-body">
-        <p>
-          Demo / pre-launch flow. No real transactions are executed. We only check if Phantom is installed and ready.
-        </p>
-        <div id="phantomStatus" class="notice">
-          Checking for Phantom...
-        </div>
-        <div class="modal-grid" style="margin-top:12px">
-          <button class="btn primary" id="btnCheckPhantom">Check Phantom</button>
-          <button class="btn" id="btnConnectPhantom">Connect Phantom (demo)</button>
-          <a class="btn ghost" href="https://phantom.app" target="_blank" rel="noreferrer">Get Phantom</a>
-        </div>
+        <p class="small">Pay in USDC on Solana mainnet. Minimum 10 USDC.</p>
         <div class="notice small">
-          Phantom only: no other wallets, no live token purchase yet.
+          This is not a public token launch. ECO tokens are not distributed yet. Payment secures a future ECO allocation, delivered at TGE.
         </div>
+
+        <div class="card" style="margin:12px 0;">
+          <div class="card-title">Status</div>
+          <p id="buyStatus" class="small">Wallet not connected.</p>
+          <button class="btn primary" id="buyConnect">Connect Phantom</button>
+        </div>
+        <div class="card" style="margin:12px 0;">
+          <div class="card-title">Amount</div>
+          <label class="small" for="buyAmount">USDC Amount (min 10)</label>
+          <input id="buyAmount" type="number" min="10" step="0.01" placeholder="10" style="width:100%; padding:10px; border-radius:12px; border:1px solid rgba(255,255,255,.12); background: rgba(0,0,0,.18); color: var(--text); margin:6px 0 8px;">
+          <p class="small">Rate: 1 USDC = 200 ECO (indicative)</p>
+          <p class="small">You receive (indicative): <b id="buyReceive">0 ECO</b></p>
+        </div>
+        <button class="btn primary" id="buyPay">Buy with USDC</button>
+        <div id="buyResult" class="small" style="margin-top:12px; color:var(--muted);"></div>
       </div>
     </div>
   </div>
