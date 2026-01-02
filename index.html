@@ -479,89 +479,125 @@
       </div>
     </section>
 
+    <!-- TOKENOMICS DONUT -->
+    <section id="tokenomics" class="tokenomics-section">
+      <div class="tokenomics-card">
+        <div class="tokenomics-left">
+          <div class="tokenomics-header">
+            <h2>ECO Tokenomics</h2>
+            <p><b>Total Supply:</b> 1,000,000,000 ECO (Solana)</p>
+            <p>
+              ECO powers the EcoSim economy: crafting, upgrades, marketplace fees, and long-term ecosystem growth.
+              ECO is designed for a sustainable in-game economy - emissions are controlled, major allocations are vested,
+              and liquidity is managed responsibly. <b>In-game points are off-chain</b> and do not affect ECO's total supply.
+            </p>
+          </div>
+
+          <div class="tokenomics-body">
+            <h3>Allocation</h3>
+            <ul class="tokenomics-list">
+              <li><b>30% - Game Rewards</b> (300,000,000 ECO): earned through gameplay; emissions capped plus sinks (upgrades, crafting, fusion).</li>
+              <li><b>22.5% - Liquidity & Listings</b> (225,000,000 ECO): DEX liquidity and future listings; LP planned to be locked.</li>
+              <li><b>15% - Team</b> (150,000,000 ECO): vesting 12-month cliff plus 36-month linear unlock.</li>
+              <li><b>7.5% - Early Adopters</b> (75,000,000 ECO): milestone-based rewards for real contributors (anti-farm).</li>
+              <li><b>8% - Seed Round</b> (80,000,000 ECO): vesting 3-month cliff plus 12-month linear unlock.</li>
+              <li><b>7% - Private Round</b> (70,000,000 ECO): vesting 6-month cliff plus 18-month linear unlock.</li>
+              <li><b>5% - Public Sale</b> (50,000,000 ECO): 20-30% at TGE, remainder over 6-9 months.</li>
+              <li><b>5% - Advisors & Partners</b> (50,000,000 ECO): vesting 6-month cliff plus 18-month linear unlock.</li>
+            </ul>
+
+            <h3>In-Game Points vs ECO</h3>
+            <p>
+              <b>In-Game Points are not ECO.</b> Points are off-chain progression units used inside the game.
+              ECO is the on-chain asset with fixed total supply. Any future conversion (if enabled) will be capped and rate-limited.
+            </p>
+
+            <p class="tokenomics-note">
+              <i>All allocations and schedules may be refined during development to ensure a healthy economy and fair launch conditions.</i>
+            </p>
+          </div>
+        </div>
+
+        <div class="tokenomics-right">
+          <img
+            src="./eco-tokenomics-donut.svg"
+            alt="ECO token distribution donut chart"
+            class="tokenomics-chart"
+          />
+        </div>
+      </div>
+    </section>
+
     <!-- ROADMAP -->
-    <section id="roadmap" class="section">
-      <div class="section-head">
-        <h2>Game Roadmap</h2>
-        <p>Build the fun first. Then scale. Then add on-chain trading.</p>
+    <section id="roadmap" class="roadmap-section">
+      <div class="roadmap-header">
+        <h2>Roadmap</h2>
+        <p>
+          EcoSim is built in phases. We ship playable features first, then expand the economy, NFTs,
+          and on-chain utilities step by step.
+        </p>
       </div>
 
-      <div class="roadmap">
-        <div class="rm-card">
-          <div class="rm-left">
-            <div class="rm-pill">Phase 0 &bull; Prototype</div>
-            <div class="rm-time">Now</div>
-          </div>
-          <div class="rm-right">
-            <ul>
-              <li>Terrain + CharacterController + CameraFollow</li>
-              <li>Daily gifts + basic HUD + joystick</li>
-              <li>Core economy tick + simple resources</li>
-              <li>Stability on mobile (FPS + UI scaling)</li>
-            </ul>
-          </div>
+      <div class="roadmap-grid">
+        <div class="roadmap-item">
+          <h3>Phase 0 - Foundation (Now)</h3>
+          <ul>
+            <li>ECO token created on Solana (mint + metadata)</li>
+            <li>Website v1 (tokenomics, roadmap, wallet connect)</li>
+            <li>Core economy design (sources/sinks, crafting, upgrades, fusion)</li>
+            <li>Security baseline: treasury setup + vesting plan</li>
+          </ul>
+          <p class="roadmap-goal"><b>Goal:</b> a clean, verifiable foundation before public growth.</p>
         </div>
 
-        <div class="rm-card">
-          <div class="rm-left">
-            <div class="rm-pill">Phase 1 &bull; Foundations</div>
-            <div class="rm-time">Q1</div>
-          </div>
-          <div class="rm-right">
-            <ul>
-              <li>Market building (buy/sell basic items)</li>
-              <li>Building placement, upgrades, slot caps</li>
-              <li>Worker assignment + basic production buildings</li>
-              <li>Inventory bag + save/load</li>
-            </ul>
-          </div>
+        <div class="roadmap-item">
+          <h3>Phase 1 - Core Gameplay (Alpha)</h3>
+          <ul>
+            <li>Playable loop: build -> produce -> craft -> upgrade</li>
+            <li>Worker progression (levels + talents)</li>
+            <li>Building upgrades + fusion to star tiers (supply reduction concept)</li>
+            <li>Off-chain points system for progression (separate from ECO)</li>
+          </ul>
+          <p class="roadmap-goal"><b>Goal:</b> a fun game loop with clear progression and economy balance.</p>
         </div>
 
-        <div class="rm-card">
-          <div class="rm-left">
-            <div class="rm-pill">Phase 2 &bull; Workers & Talents</div>
-            <div class="rm-time">Q2</div>
-          </div>
-          <div class="rm-right">
-            <ul>
-              <li>Worker types: Worker / Entrepreneur / Investor</li>
-              <li>Talent reveal system + talent tiers</li>
-              <li>Crafting loop + contracts to stabilize economy</li>
-              <li>Interior maps for buildings</li>
-            </ul>
-          </div>
+        <div class="roadmap-item">
+          <h3>Phase 2 - Economy & Marketplace (Beta)</h3>
+          <ul>
+            <li>In-game marketplace (player-to-player trading)</li>
+            <li>Resource chains + crafting recipes expansion</li>
+            <li>ECO sinks: fees, repairs, upgrades, fusion costs</li>
+            <li>Early adopters program (milestone-based rewards, anti-farm)</li>
+          </ul>
+          <p class="roadmap-goal"><b>Goal:</b> a working economy where players create value and trade.</p>
         </div>
 
-        <div class="rm-card">
-          <div class="rm-left">
-            <div class="rm-pill">Phase 3 &bull; Merge / Stars</div>
-            <div class="rm-time">Q3</div>
-          </div>
-          <div class="rm-right">
-            <ul>
-              <li>Level 30 fusion -> higher star tiers</li>
-              <li>Star matching rules (star buildings need star workers)</li>
-              <li>Supply reduction mechanics + late-game goals</li>
-              <li>Special characters / rare traits</li>
-            </ul>
-          </div>
+        <div class="roadmap-item">
+          <h3>Phase 3 - On-Chain Assets (Launch)</h3>
+          <ul>
+            <li>NFTs for buildings, workers, and items (ownable assets)</li>
+            <li>Withdraw/import system (game <-> wallet)</li>
+            <li>Vesting enabled for key allocations (team/rounds/advisors)</li>
+            <li>DEX liquidity setup (with LP lock plan)</li>
+          </ul>
+          <p class="roadmap-goal"><b>Goal:</b> true ownership + transparent on-chain economy.</p>
         </div>
 
-        <div class="rm-card highlight">
-          <div class="rm-left">
-            <div class="rm-pill">Phase 4 &bull; Web3 (After Core)</div>
-            <div class="rm-time">Q4+</div>
-          </div>
-          <div class="rm-right">
-            <ul>
-              <li>Mint in-game assets as NFTs (optional withdrawal)</li>
-              <li>On-chain marketplace + re-import feature</li>
-              <li>Token launch (ECO) + controlled sinks</li>
-              <li>Daily checks + anti-abuse protections</li>
-            </ul>
-          </div>
+        <div class="roadmap-item">
+          <h3>Phase 4 - Expansion & Governance</h3>
+          <ul>
+            <li>Seasonal events + limited drops</li>
+            <li>Staking / utility expansions (as economy allows)</li>
+            <li>DAO-ready treasury (multi-sig -> governance roadmap)</li>
+            <li>New regions, factories, and production layers</li>
+          </ul>
+          <p class="roadmap-goal"><b>Goal:</b> long-term sustainability and community-driven evolution.</p>
         </div>
       </div>
+
+      <p class="roadmap-note">
+        <i>Timelines may shift as we prioritize security, economy balance, and a high-quality player experience.</i>
+      </p>
     </section>
 
     <!-- FAQ -->
