@@ -93,8 +93,12 @@ function initFlow(prefix) {
       return;
     }
     try {
-      const res = await provider.connect({ onlyIfTrusted: false });
-      wallet = res.publicKey || provider.publicKey;
+      setStatus("Waiting for approval in Phantom...");
+      const res = await (provider.connect
+        ? provider.connect({ onlyIfTrusted: false })
+        : provider.request({ method: "connect" }));
+      wallet = res?.publicKey || provider.publicKey;
+      if (!wallet) throw new Error("No wallet returned from Phantom.");
       setStatus(`Connected: ${wallet.toString()}`);
       if (resultEl) resultEl.textContent = "";
     } catch (e) {
