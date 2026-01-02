@@ -470,6 +470,11 @@ a{ color:inherit; text-decoration:none; }
   background: rgba(246,194,92,.10);
   color: rgba(255,255,255,.85);
 }
+.notice.warn{
+  border-color: rgba(255,120,120,.40);
+  background: rgba(255,120,120,.10);
+  color: rgba(255,220,220,.92);
+}
 .notice.small{ font-size:12px; margin-top:10px; }
 
 /* Roadmap */

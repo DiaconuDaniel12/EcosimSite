@@ -620,21 +620,23 @@
     <div class="modal-backdrop" data-close="1"></div>
     <div class="modal-card" role="dialog" aria-modal="true" aria-label="Buy ECO">
       <div class="modal-head">
-        <div class="modal-title">Buy ECO (Coming Soon)</div>
+        <div class="modal-title">Connect Phantom Wallet</div>
         <button class="x" data-close="1">✕</button>
       </div>
       <div class="modal-body">
         <p>
-          Add your real links when ready:
-          Raydium / Jupiter / Wallet connect / CEX.
+          Demo / pre-launch flow. No real transactions are executed. We only check if Phantom is installed and ready.
         </p>
-        <div class="modal-grid">
-          <a class="btn primary" href="#" onclick="return false;">Raydium (placeholder)</a>
-          <a class="btn" href="#" onclick="return false;">Jupiter (placeholder)</a>
-          <a class="btn ghost" href="#" onclick="return false;">Whitepaper (placeholder)</a>
+        <div id="phantomStatus" class="notice">
+          Checking for Phantom...
+        </div>
+        <div class="modal-grid" style="margin-top:12px">
+          <button class="btn primary" id="btnCheckPhantom">Check Phantom</button>
+          <button class="btn" id="btnConnectPhantom">Connect Phantom (demo)</button>
+          <a class="btn ghost" href="https://phantom.app" target="_blank" rel="noreferrer">Get Phantom</a>
         </div>
         <div class="notice small">
-          Tip: keep buy links off until token + contracts are audited.
+          Phantom only: no other wallets, no live token purchase yet.
         </div>
       </div>
     </div>
