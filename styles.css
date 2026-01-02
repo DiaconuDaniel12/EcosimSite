@@ -623,9 +623,15 @@ a{ color:inherit; text-decoration:none; }
   height: auto;
   filter: drop-shadow(0 12px 40px rgba(0,0,0,.45));
 }
+.tokenomics-trust{
+  margin: 10px 0 0;
+  color: var(--muted);
+  text-align: center;
+  font-size: 13px;
+}
 @media (max-width: 900px){
   .tokenomics-card{ grid-template-columns: 1fr; }
-  .tokenomics-right{ order: -1; }
+  .tokenomics-right{ order: 2; }
 }
 
 /* Modal */
