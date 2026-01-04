@@ -16,6 +16,11 @@ import {
   doc,
   getDoc,
   setDoc,
+  updateDoc,
+  getDocs,
+  collection,
+  query,
+  where,
   serverTimestamp,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
@@ -45,14 +50,44 @@ async function ensureUserDocument(walletAddress) {
   const snap = await getDoc(ref);
   if (snap.exists()) {
     console.log("User exists");
+    // refresh lastSeenAt without touching points/hasPurchased
+    await setDoc(ref, { lastSeenAt: serverTimestamp() }, { merge: true });
     return;
   }
   await setDoc(ref, {
     wallet: walletAddress,
     points: 0,
+    hasPurchased: false,
+    airdropStatus: "pending",
     createdAt: serverTimestamp(),
+    lastSeenAt: serverTimestamp(),
   });
   console.log("User created");
+}
+
+// Simple airdrop helper (run from console when needed)
+// Filters by hasPurchased (default true) and airdropStatus (default "pending")
+// Marks matched users as "sent"
+async function runAirdrop({ onlyPurchased = true, status = "pending" } = {}) {
+  const filters = [];
+  if (onlyPurchased) filters.push(where("hasPurchased", "==", true));
+  if (status) filters.push(where("airdropStatus", "==", status));
+
+  const q = filters.length
+    ? query(collection(firestore, "users"), ...filters)
+    : query(collection(firestore, "users"));
+
+  const snap = await getDocs(q);
+  console.log(`Airdrop scan: ${snap.size} users matched`);
+
+  for (const docSnap of snap.docs) {
+    try {
+      await updateDoc(docSnap.ref, { airdropStatus: "sent" });
+      console.log(`Airdrop marked sent: ${docSnap.id}`);
+    } catch (err) {
+      console.error(`Airdrop update failed for ${docSnap.id}`, err);
+    }
+  }
 }
 
 const els = {
