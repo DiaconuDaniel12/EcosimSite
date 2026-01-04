@@ -6,7 +6,11 @@ const WEB3_FALLBACK = "https://esm.sh/@solana/web3.js@1.91.4?target=es2020&v=2";
 const SPL_URL = "https://cdn.jsdelivr.net/npm/@solana/spl-token@0.3.11/+esm?v=2";
 const SPL_FALLBACK = "https://esm.sh/@solana/spl-token@0.3.11?target=es2020&v=2";
 
-import { getApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import {
+  getApp,
+  getApps,
+  initializeApp,
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import {
   getFirestore,
   doc,
@@ -14,6 +18,16 @@ import {
   setDoc,
   serverTimestamp,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyChsncNZ5qeqAosV4_QncIkoTyf6mmPz9o",
+  authDomain: "ecosimsitebase.firebaseapp.com",
+  projectId: "ecosimsitebase",
+  storageBucket: "ecosimsitebase.firebasestorage.app",
+  messagingSenderId: "918833539734",
+  appId: "1:918833539734:web:cdc25a7a6ece864ffcb0b7",
+  measurementId: "G-1QBL56VSW6",
+};
 
 const RPC_URL = "https://api.mainnet-beta.solana.com";
 const USDC_DECIMALS = 6;
@@ -23,7 +37,7 @@ const ECO_PER_USDC = 200; // indicative
 const EST_FEE_SOL = 0.000005; // ~5k lamports typical transfer fee
 const EXPLORER_BASE = "https://solscan.io/tx/";
 
-const firebaseApp = getApp();
+const firebaseApp = getApps().length ? getApp() : initializeApp(firebaseConfig);
 const firestore = getFirestore(firebaseApp);
 
 async function ensureUserDocument(walletAddress) {
