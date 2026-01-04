@@ -1,0 +1,16 @@
+{
+  "name": "eco-sim-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "dev:css": "npx tailwindcss -i ./tailwind.css -o ./dist/output.css --watch",
+    "build:css": "npx tailwindcss -i ./tailwind.css -o ./dist/output.css --minify",
+    "build": "npm run build:css && vite build"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.19"
+  }
+}
