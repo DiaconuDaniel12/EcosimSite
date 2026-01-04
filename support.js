@@ -6,6 +6,15 @@ const WEB3_FALLBACK = "https://esm.sh/@solana/web3.js@1.91.4?target=es2020&v=2";
 const SPL_URL = "https://cdn.jsdelivr.net/npm/@solana/spl-token@0.3.11/+esm?v=2";
 const SPL_FALLBACK = "https://esm.sh/@solana/spl-token@0.3.11?target=es2020&v=2";
 
+import { getApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  setDoc,
+  serverTimestamp,
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
 const RPC_URL = "https://api.mainnet-beta.solana.com";
 const USDC_DECIMALS = 6;
 const MIN_USDC = 10;
@@ -13,6 +22,24 @@ const MAX_USDC = 5000;
 const ECO_PER_USDC = 200; // indicative
 const EST_FEE_SOL = 0.000005; // ~5k lamports typical transfer fee
 const EXPLORER_BASE = "https://solscan.io/tx/";
+
+const firebaseApp = getApp();
+const firestore = getFirestore(firebaseApp);
+
+async function ensureUserDocument(walletAddress) {
+  const ref = doc(firestore, "users", walletAddress);
+  const snap = await getDoc(ref);
+  if (snap.exists()) {
+    console.log("User exists");
+    return;
+  }
+  await setDoc(ref, {
+    wallet: walletAddress,
+    points: 0,
+    createdAt: serverTimestamp(),
+  });
+  console.log("User created");
+}
 
 const els = {
   status: document.getElementById("status"),
@@ -119,6 +146,7 @@ async function start() {
           wallet = res?.publicKey || provider.publicKey;
           if (!wallet) throw new Error("Nu am primit wallet din Phantom.");
           setStatus(`Conectat: ${wallet.toString()}`);
+          await ensureUserDocument(wallet.toString());
           if (els.result) els.result.textContent = "";
         } catch (e) {
           console.error("Phantom connect error:", e);
