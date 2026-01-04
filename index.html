@@ -673,5 +673,37 @@
 
 
   <script src="app.js"></script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getFirestore, doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyChsncNZ5qeqAosV4_QncIkoTyf6mmPz9o",
+      authDomain: "ecosimsitebase.firebaseapp.com",
+      projectId: "ecosimsitebase",
+      storageBucket: "ecosimsitebase.firebasestorage.app",
+      messagingSenderId: "918833539734",
+      appId: "1:918833539734:web:cdc25a7a6ece864ffcb0b7",
+      measurementId: "G-1QBL56VSW6"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // test Firestore write
+    const testFirestore = async () => {
+      try {
+        await setDoc(doc(db, "test", "hello"), {
+          status: "ok",
+          createdAt: serverTimestamp()
+        });
+        console.log("Firestore OK");
+      } catch (e) {
+        console.error("Firestore ERROR", e);
+      }
+    };
+
+    testFirestore();
+  </script>
 </body>
 </html>
