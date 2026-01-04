@@ -1,9 +1,10 @@
 // support.js - Phantom + USDC contribution (static)
 // Use jsDelivr +esm (sends proper CORS) with esm.sh as fallback
-const WEB3_URL = "https://cdn.jsdelivr.net/npm/@solana/web3.js@1.91.4/+esm";
-const WEB3_FALLBACK = "https://esm.sh/@solana/web3.js@1.91.4?target=es2020";
-const SPL_URL = "https://cdn.jsdelivr.net/npm/@solana/spl-token@0.3.11/+esm";
-const SPL_FALLBACK = "https://esm.sh/@solana/spl-token@0.3.11?target=es2020";
+// cache-bust query to avoid stale CDN responses
+const WEB3_URL = "https://cdn.jsdelivr.net/npm/@solana/web3.js@1.91.4/+esm?v=2";
+const WEB3_FALLBACK = "https://esm.sh/@solana/web3.js@1.91.4?target=es2020&v=2";
+const SPL_URL = "https://cdn.jsdelivr.net/npm/@solana/spl-token@0.3.11/+esm?v=2";
+const SPL_FALLBACK = "https://esm.sh/@solana/spl-token@0.3.11?target=es2020&v=2";
 
 const RPC_URL = "https://api.mainnet-beta.solana.com";
 const USDC_DECIMALS = 6;
@@ -80,7 +81,21 @@ async function start() {
 
   async function ensureAta(owner, mint, payer) {
     const ata = await getAssociatedTokenAddress(mint, owner, false);
-    const info = await connection.getAccountInfo(ata);
+    let info;
+    try {
+      info = await connection.getAccountInfo(ata);
+    } catch (err) {
+      // Friendly message for RPC blocks/rate limits
+      const msg = err?.message || "";
+      if (
+        msg.includes("403") ||
+        msg.toLowerCase().includes("forbidden") ||
+        msg.toLowerCase().includes("failed to get info about account")
+      ) {
+        throw new Error("Nu pot citi contul USDC (RPC blocat/rate-limit). Încearcă din nou, schimbă RPC sau asigură-te că ai SOL/USDC.");
+      }
+      throw err;
+    }
     const ix = info ? null : createAssociatedTokenAccountInstruction(payer, ata, owner, mint);
     return { ata, ix, exists: !!info };
   }
@@ -178,6 +193,7 @@ async function start() {
           }
         } catch (err) {
           console.error(err);
+          // If RPC blocked, err.message is already user-friendly; otherwise show generic
           setStatus(`Eroare: ${err.message || err}`, true);
         } finally {
           els.payBtn.disabled = false;
