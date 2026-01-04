@@ -32,11 +32,7 @@
       </div>
 
       <div class="topbar-actions">
-        <a class="pill primary" href="https://t.me/Eco_SimGame" target="_blank" rel="noreferrer noopener">Play Now</a>
-<<<<<<< HEAD
-        <a class="pill ghost" href="https://inspiring-mandazi-da7e16.netlify.app/" target="_blank" rel="noreferrer noopener">Play Web</a>
-=======
->>>>>>> 174d357 (Update hero CTAs and fix Phantom buy import)
+        <a class="pill primary" href="app.html">Play / Buy</a>
         <div class="topbar-social">
           <a class="icon-link" href="https://t.me/EcoSimProject" target="_blank" rel="noreferrer noopener" aria-label="Telegram community">TG</a>
           <a class="icon-link" href="https://x.com/EcoSimProject" target="_blank" rel="noreferrer noopener" aria-label="X / Twitter">X</a>
@@ -109,23 +105,18 @@
         </p>
 
         <div class="hero-cta">
-<<<<<<< HEAD
-          <a class="btn primary" href="https://t.me/Eco_SimGame" target="_blank" rel="noreferrer noopener">Play Now</a>
-          <a class="btn" href="https://inspiring-mandazi-da7e16.netlify.app/" target="_blank" rel="noreferrer noopener">Play Web</a>
-          <a class="btn ghost" href="https://t.me/EcoSimProject" target="_blank" rel="noreferrer noopener">Community</a>
-          <a class="btn ghost" href="https://x.com/EcoSimProject" target="_blank" rel="noreferrer noopener">Follow on X</a>
-=======
           <div class="hero-cta-buttons">
-            <a class="btn primary" href="https://t.me/ecosimgamebot/httpsinspiringmandazida7e16" target="_blank" rel="noreferrer noopener">Play on Telegram</a>
-            <a class="btn" href="https://t.me/EcoSimProject" target="_blank" rel="noreferrer noopener">Join Community</a>
-            <a class="btn ghost" href="https://t.me/ecosimgamebot/httpsinspiringmandazida7e16" target="_blank" rel="noreferrer noopener">Follow on X</a>
+            <a class="btn primary" href="app.html">Play / Buy</a>
+            <a class="btn" href="https://inspiring-mandazi-da7e16.netlify.app/" target="_blank" rel="noreferrer noopener">Play on Telegram</a>
+            <a class="btn" href="https://t.me/Eco_SimGame" target="_blank" rel="noreferrer noopener">Open Bot</a>
+            <a class="btn ghost" href="https://t.me/EcoSimProject" target="_blank" rel="noreferrer noopener">Join Telegram</a>
+            <a class="btn ghost" href="https://x.com/EcoSimProject" target="_blank" rel="noreferrer noopener">Follow on X</a>
           </div>
           <div class="hero-qr">
             <div class="hero-qr-label">Scan to join</div>
             <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Ft.me%2FEcoSimProject" alt="QR code to join EcoSim Telegram community" loading="lazy" />
             <div class="hero-qr-link">t.me/EcoSimProject</div>
           </div>
->>>>>>> 174d357 (Update hero CTAs and fix Phantom buy import)
         </div>
 
         <div class="hero-stats">
@@ -680,76 +671,7 @@
     </section>
   </main>
 
-  <!-- BUY MODAL -->
-  <div class="modal" id="buyModal" aria-hidden="true">
-    <div class="modal-backdrop" data-close="1"></div>
-    <div class="modal-card" role="dialog" aria-modal="true" aria-label="Buy ECO">
-      <div class="modal-head">
-        <div class="modal-title">Buy ECO</div>
-        <button class="x" data-close="1">✕</button>
-      </div>
-      <div class="modal-body">
-        <p class="small">Pay in USDC on Solana mainnet. Minimum 10 USDC.</p>
-        <div class="notice small">
-          This is not a public token launch. ECO tokens are not distributed yet. Payment secures a future ECO allocation, delivered at TGE.
-        </div>
-
-        <div class="card" style="margin:12px 0;">
-          <div class="card-title">Status</div>
-          <p id="buyStatus" class="small">Wallet not connected.</p>
-          <button class="btn primary" id="buyConnect">Connect Phantom</button>
-        </div>
-        <div class="card" style="margin:12px 0;">
-          <div class="card-title">Amount</div>
-          <label class="small" for="buyAmount">USDC Amount (min 10)</label>
-          <input id="buyAmount" type="number" min="10" step="0.01" placeholder="10" style="width:100%; padding:10px; border-radius:12px; border:1px solid rgba(255,255,255,.12); background: rgba(0,0,0,.18); color: var(--text); margin:6px 0 8px;">
-          <p class="small">Rate: 1 USDC = 200 ECO (indicative)</p>
-          <p class="small">You receive (indicative): <b id="buyReceive">0 ECO</b></p>
-        </div>
-        <button class="btn primary" id="buyPay">Buy with USDC</button>
-        <div id="buyResult" class="small" style="margin-top:12px; color:var(--muted);"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SUPPORT MODAL -->
-  <div class="modal" id="supportModal" aria-hidden="true">
-    <div class="modal-backdrop" data-close="1"></div>
-    <div class="modal-card" role="dialog" aria-modal="true" aria-label="Support EcoSim">
-      <div class="modal-head">
-        <div class="modal-title">Support EcoSim</div>
-        <button class="x" data-close="1">✕</button>
-      </div>
-      <div class="modal-body">
-        <p class="small">Contribute in USDC on Solana mainnet. Minimum 10 USDC.</p>
-        <div class="notice small">
-          This is not a public token launch. ECO tokens are not distributed at this stage.
-          Contributions secure a future ECO allocation that will be distributed at the official TGE, coming soon.
-        </div>
-        <div class="card" style="margin:12px 0;">
-          <div class="card-title">Status</div>
-          <p id="supportStatus" class="small">Wallet not connected.</p>
-          <button class="btn primary" id="supportConnect">Connect Phantom</button>
-        </div>
-        <div class="card" style="margin:12px 0;">
-          <div class="card-title">Amount</div>
-          <label class="small" for="supportAmount">USDC Amount (min 10)</label>
-          <input id="supportAmount" type="number" min="10" step="0.01" placeholder="10" style="width:100%; padding:10px; border-radius:12px; border:1px solid rgba(255,255,255,.12); background: rgba(0,0,0,.18); color: var(--text); margin:6px 0 8px;">
-          <p class="small">Rate: 1 USDC = 200 ECO (subject to final TGE terms)</p>
-          <p class="small">You receive (indicative): <b id="supportReceive">0 ECO</b></p>
-        </div>
-        <div class="card" style="margin:12px 0;">
-          <div class="card-title">Info</div>
-          <p class="small">ECO mint: <span id="supportEcoMint">-</span></p>
-          <p class="small">Vesting info: <a id="supportVestingLink" href="#" target="_blank" rel="noreferrer">View Streamflow</a></p>
-        </div>
-        <button class="btn primary" id="supportPay">Support with USDC</button>
-        <div id="supportResult" class="small" style="margin-top:12px; color:var(--muted);"></div>
-      </div>
-    </div>
-  </div>
 
   <script src="app.js"></script>
-  <script type="module" src="support.js"></script>
 </body>
 </html>
