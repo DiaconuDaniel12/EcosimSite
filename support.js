@@ -92,7 +92,7 @@ async function start() {
         msg.toLowerCase().includes("forbidden") ||
         msg.toLowerCase().includes("failed to get info about account")
       ) {
-        throw new Error("Cannot read your USDC account. Make sure you have USDC and a little SOL for fees, then try again.");
+        throw new Error("Make sure you have enough USDC and SOL for fees.");
       }
       throw err;
     }
