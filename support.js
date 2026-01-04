@@ -92,7 +92,7 @@ async function start() {
         msg.toLowerCase().includes("forbidden") ||
         msg.toLowerCase().includes("failed to get info about account")
       ) {
-        throw new Error("Nu pot citi contul USDC (RPC blocat/rate-limit). Încearcă din nou, schimbă RPC sau asigură-te că ai SOL/USDC.");
+        throw new Error("Cannot read your USDC account. Make sure Phantom has USDC + some SOL for fees, then try again or switch RPC.");
       }
       throw err;
     }
