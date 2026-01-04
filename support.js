@@ -92,7 +92,7 @@ async function start() {
         msg.toLowerCase().includes("forbidden") ||
         msg.toLowerCase().includes("failed to get info about account")
       ) {
-        throw new Error("Cannot read your USDC account. Make sure Phantom has USDC + some SOL for fees, then try again or switch RPC.");
+        throw new Error("Cannot read your USDC account. Make sure you have USDC and a little SOL for fees, then try again.");
       }
       throw err;
     }
