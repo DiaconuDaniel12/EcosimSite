@@ -9,7 +9,11 @@ import {
   getAssociatedTokenAddress,
   createAssociatedTokenAccountInstruction,
   createTransferCheckedInstruction,
+<<<<<<< HEAD
+} from "https://cdn.jsdelivr.net/npm/@solana/spl-token@0.3.11/dist/index.browser.esm.js";
+=======
 } from "https://cdn.jsdelivr.net/npm/@solana/spl-token@0.3.11/lib/index.browser.esm.js";
+>>>>>>> 174d357 (Update hero CTAs and fix Phantom buy import)
 
 const RPC_URL = (window.NEXT_PUBLIC_SOLANA_RPC || "").trim() || "https://api.mainnet-beta.solana.com";
 const USDC_MINT_STR = (window.NEXT_PUBLIC_USDC_MINT || "").trim() || "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v";
