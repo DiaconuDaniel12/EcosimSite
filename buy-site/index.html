@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EcoSim - Buy ECO</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@solana/web3.js@1.91.7/lib/index.iife.min.js"></script>
   <style>
     body { background: radial-gradient(circle at 20% 20%, rgba(251, 191, 36, 0.08), transparent 40%), #0a0a0f; color: #e5e7eb; }
     .glass { background: rgba(20, 17, 8, 0.7); backdrop-filter: blur(14px); }
@@ -123,10 +124,11 @@
           <button class="btn-ghost pill px-4 py-2 text-sm font-semibold md:col-span-1" id="copyBtn">Copy Presale Wallet</button>
         </div>
 
-        <div class="rounded-xl border border-white/10 bg-slate-900/60 p-3 text-sm text-slate-200 space-y-1">
+          <div class="rounded-xl border border-white/10 bg-slate-900/60 p-3 text-sm text-slate-200 space-y-1">
           <div>Wallet: <span id="walletMini">-</span></div>
           <div>Total bought (ECO): <span id="totalBought">0</span></div>
           <div>Points: <span id="points">0</span></div>
+          <div>USDC balance: <span id="usdcBalance">-</span></div>
           <div>Status: <span id="connStatus">Not connected</span></div>
           <div id="result" class="text-xs text-cyan-200"></div>
         </div>
