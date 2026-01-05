@@ -1,4 +1,5 @@
 // Smooth scroll + sidebar active state + slider + modal
+console.log("EcoSim Site V1");
 
 const $ = (q, el=document) => el.querySelector(q);
 const $$ = (q, el=document) => [...el.querySelectorAll(q)];
