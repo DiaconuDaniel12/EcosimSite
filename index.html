@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -44,28 +45,28 @@
     <div class="side-inner">
       <div class="side-group">
         <button class="side-item active" data-target="top">
-          <span class="ico"></span><span>Top</span>
+          <span class="ico">-</span><span>Top</span>
         </button>
         <button class="side-item" data-target="features">
-          <span class="ico"></span><span>Game Features</span>
+          <span class="ico">-</span><span>Game Features</span>
         </button>
         <button class="side-item" data-target="economy">
-          <span class="ico">️</span><span>Decentralized Economy</span>
+          <span class="ico">-</span><span>Decentralized Economy</span>
         </button>
         <button class="side-item" data-target="craft">
-          <span class="ico">️</span><span>Crafting & Production</span>
+          <span class="ico">-</span><span>Crafting & Production</span>
         </button>
         <button class="side-item" data-target="merge">
-          <span class="ico">⭐</span><span>Merge / Upgrade</span>
+          <span class="ico">-</span><span>Merge / Upgrade</span>
         </button>
         <button class="side-item" data-target="token">
-          <span class="ico"></span><span>ECO Token</span>
+          <span class="ico">-</span><span>ECO Token</span>
         </button>
         <button class="side-item" data-target="roadmap">
-          <span class="ico">️</span><span>Roadmap</span>
+          <span class="ico">-</span><span>Roadmap</span>
         </button>
         <button class="side-item" data-target="faq">
-          <span class="ico">❓</span><span>FAQ</span>
+          <span class="ico">-</span><span>FAQ</span>
         </button>
       </div>
 
@@ -85,49 +86,207 @@
   <!-- Main -->
   <main class="main">
     <!-- HERO -->
-    <section id="top" class="relative overflow-hidden rounded-2xl border border-lime-400/15 bg-slate-950/80 shadow-[0_20px_60px_rgba(10,255,150,0.12)]">
-      <div class="absolute inset-0">
-        <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/70 to-slate-900/60"></div>
-        <div class="absolute inset-0 bg-[url('./1A.jpg')] bg-cover bg-center opacity-30"></div>
+    <section id="top" class="hero-shell">
+      <div class="hero-shell-bg">
+        <div class="hero-layer image"></div>
+        <div class="hero-layer tint"></div>
       </div>
-      <div class="relative mx-auto max-w-5xl px-6 py-14 flex flex-col items-center text-center gap-4">
-        <h1 class="text-4xl md:text-5xl font-black text-white drop-shadow leading-tight">EcoSim — Early Access is Live</h1>
-        <p class="text-lg text-slate-200 flex items-center gap-2 justify-center">
-          Explore • Earn • Collect Gifts
-        </p>
+
+      <div class="hero-grid">
+        <div class="hero-col">
+          <div class="hero-kicker">Early Access - Economy-first</div>
+          <h1 class="hero-heading">Simuleaza impactul ecologic al deciziilor tale</h1>
+          <p class="hero-sub">
+            Alege un scenariu, ajusteaza parametrii si vezi cum se schimba emisiile de CO2, consumul de apa si costurile.
+            Totul in 2 minute, fara cont.
+          </p>
+
+          <div class="hero-cta-row">
+            <a class="btn primary" href="#play" id="heroSimBtn">Porneste simularea</a>
+            <a class="btn ghost" href="#tokenomics">Vezi tokenomics</a>
+            <div class="hero-meta">V1.0 - tracking activ - mobile ready</div>
+          </div>
+
+          <div class="hero-progress">
+            <div class="hero-progress-top">
+              <span>Scenariu incarcat</span>
+              <span class="hero-progress-val">72%</span>
+            </div>
+            <div class="hero-progress-bar" role="presentation">
+              <span style="width:72%"></span>
+            </div>
+            <div class="hero-note">Fara cont - poti reveni oricand - sincronizam punctele</div>
+          </div>
+
+          <div class="hero-stats-row">
+            <div class="pill chip">Economie simulata</div>
+            <div class="pill chip ghost">ECO sinks & rewards</div>
+            <div class="pill chip ghost">Merge-to-upgrade</div>
+          </div>
+        </div>
+
+        <div class="hero-col hero-right">
+          <div class="sim-card reveal">
+            <div class="sim-head">
+              <div>
+                <div class="sim-title">Rezultat rapid</div>
+                <div class="sim-sub">Scenariu: Oras mic, energie mixta</div>
+              </div>
+              <span class="pill ghost">Live</span>
+            </div>
+            <div class="sim-grid">
+              <div class="sim-metric">
+                <div class="sim-k">Emisii CO2</div>
+                <div class="sim-v">-18%</div>
+                <div class="sim-trend good">+ eficienta solar</div>
+              </div>
+              <div class="sim-metric">
+                <div class="sim-k">Consum apa</div>
+                <div class="sim-v">-9%</div>
+                <div class="sim-trend ok">optimizare greywater</div>
+              </div>
+              <div class="sim-metric">
+                <div class="sim-k">Cost lunar</div>
+                <div class="sim-v">$24.3K</div>
+                <div class="sim-trend neutral">+1.2% vs baseline</div>
+              </div>
+            </div>
+            <div class="sim-chart">
+              <div class="bar" style="--v:62%"><span>CO2</span></div>
+              <div class="bar" style="--v:48%"><span>Apa</span></div>
+              <div class="bar" style="--v:55%"><span>Cost</span></div>
+              <div class="bar" style="--v:38%"><span>Deseuri</span></div>
+            </div>
+            <div class="sim-foot">
+              <span class="pill">Recomandari noi</span>
+              <a class="pill ghost" href="#recommendations">Vezi actiuni</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- HOW IT WORKS -->
     <section class="section">
-      <div class="max-w-5xl mx-auto px-4">
-        <div class="mb-6 text-center">
-          <h2 class="text-2xl font-bold text-white">How It Works</h2>
-          <p class="text-slate-300">Explore, earn, and level up your economy.</p>
+      <div class="section-head center">
+        <h2>Flow in 4 pasi</h2>
+        <p>Narativ clar: alegi scenariul, ajustezi slider-ele, vezi impactul si primesti actiuni prioritizate.</p>
+      </div>
+      <div class="flow-grid">
+        <div class="flow-card reveal">
+          <div class="flow-icon">1</div>
+          <div class="flow-title">Alegi scenariul</div>
+          <div class="flow-text">Oras mic, campus, sau fabrica. Pre-seturi cu consum si mix energetic.</div>
         </div>
-        <div class="grid gap-4 md:grid-cols-3">
-          <div class="rounded-2xl border border-lime-400/15 bg-slate-900/70 p-4 backdrop-blur shadow-[0_12px_35px_rgba(10,255,150,0.08)]">
-            <img src="./3C.jpg" alt="City exploration" class="h-32 w-full rounded-xl object-cover border border-lime-400/10 mb-3">
-            <div class="text-lime-200 text-sm font-semibold">Explore</div>
-            <div class="text-white font-bold text-lg">Explore the world</div>
-            <p class="text-slate-300 text-sm mt-1">Discover zones, interact, and gather early gifts.</p>
+        <div class="flow-card reveal" data-delay="80">
+          <div class="flow-icon">2</div>
+          <div class="flow-title">Ajustezi parametrii</div>
+          <div class="flow-text">Mix energie, apa reciclata, reciclare deseuri, investitii lunare.</div>
+        </div>
+        <div class="flow-card reveal" data-delay="140">
+          <div class="flow-icon">3</div>
+          <div class="flow-title">Vezi impactul</div>
+          <div class="flow-text">Carduri CO2 / apa / cost + grafic instant. Salvam progresul.</div>
+        </div>
+        <div class="flow-card reveal" data-delay="200">
+          <div class="flow-icon">4</div>
+          <div class="flow-title">Primesti recomandari</div>
+          <div class="flow-text">Actiuni ordonate pe impact/cost, badge-uri "Impact mare" si "Cost mic".</div>
+        </div>
+      </div>
+    </section>
+    <!-- RESULTS -->
+    <section class="section" id="results">
+      <div class="section-head center">
+        <h2>Rezultate usor de citit</h2>
+        <p>Indicatori clari si un grafic simplu. Culori consistente si legenda minimalista.</p>
+      </div>
+      <div class="results-grid">
+        <div class="result-card reveal">
+          <div class="result-top">
+            <div>
+              <div class="result-k">Emisii CO2</div>
+              <div class="result-v">-18%</div>
+            </div>
+            <span class="pill ghost">Impact mare</span>
           </div>
-          <div class="rounded-2xl border border-lime-400/15 bg-slate-900/70 p-4 backdrop-blur shadow-[0_12px_35px_rgba(10,255,150,0.08)]">
-            <img src="./3B.jpg" alt="Economy and earning" class="h-32 w-full rounded-xl object-cover border border-lime-400/10 mb-3">
-            <div class="text-lime-200 text-sm font-semibold">Earn</div>
-            <div class="text-white font-bold text-lg">Earn points by playing</div>
-            <p class="text-slate-300 text-sm mt-1">Play loops, collect points, and keep progression synced.</p>
+          <p class="result-text">Optimizare mix energie si eficienta echipamente electrice.</p>
+        </div>
+        <div class="result-card reveal" data-delay="100">
+          <div class="result-top">
+            <div>
+              <div class="result-k">Consum apa</div>
+              <div class="result-v">-9%</div>
+            </div>
+            <span class="pill ghost">Impact mediu</span>
           </div>
-          <div class="rounded-2xl border border-lime-400/15 bg-slate-900/70 p-4 backdrop-blur shadow-[0_12px_35px_rgba(10,255,150,0.08)]">
-            <img src="./4D.jpg" alt="Upgrade and economy" class="h-32 w-full rounded-xl object-cover border border-lime-400/10 mb-3">
-            <div class="text-lime-200 text-sm font-semibold">Upgrade</div>
-            <div class="text-white font-bold text-lg">Upgrade buildings &amp; economy</div>
-            <p class="text-slate-300 text-sm mt-1">Reinvest points, unlock boosts, and scale your city.</p>
+          <p class="result-text">Recuperare apa gri + senzori debite pentru zone comune.</p>
+        </div>
+        <div class="result-card reveal" data-delay="160">
+          <div class="result-top">
+            <div>
+              <div class="result-k">Cost lunar</div>
+              <div class="result-v">$24.3K</div>
+            </div>
+            <span class="pill ghost">Cost optim</span>
           </div>
+          <p class="result-text">Capex suplimentar minim, ROI estimat 9 luni.</p>
+        </div>
+      </div>
+
+      <div class="result-chart reveal">
+        <div class="chart-head">
+          <div>
+            <div class="chart-title">Grafic rapid</div>
+            <div class="chart-sub">Compara fata de baseline</div>
+          </div>
+          <div class="chart-legend">
+            <span class="legend-dot green"></span><span>Scenariu actual</span>
+            <span class="legend-dot yellow"></span><span>Baseline</span>
+          </div>
+        </div>
+        <div class="chart-bars" id="chartBars">
+          <div class="chart-bar" data-label="CO2" data-value="62" data-baseline="100"></div>
+          <div class="chart-bar" data-label="Apa" data-value="48" data-baseline="100"></div>
+          <div class="chart-bar" data-label="Cost" data-value="55" data-baseline="100"></div>
+          <div class="chart-bar" data-label="Deseuri" data-value="38" data-baseline="100"></div>
         </div>
       </div>
     </section>
 
+    <!-- RECOMMENDATIONS -->
+    <section class="section" id="recommendations">
+      <div class="section-head center">
+        <h2>Recomandari prioritizate</h2>
+        <p>Actiuni scurte cu badge-uri de impact si cost. Le poti bifa pe masura ce le implementezi.</p>
+      </div>
+      <div class="reco-grid">
+        <div class="reco-card reveal">
+          <div class="reco-row">
+            <span class="pill">Impact mare</span>
+            <span class="pill ghost">Cost mic</span>
+          </div>
+          <div class="reco-title">Instaleaza senzori de consum</div>
+          <p>Monitorizare granulara energie + apa, alerte pentru varfuri anormale.</p>
+        </div>
+        <div class="reco-card reveal" data-delay="120">
+          <div class="reco-row">
+            <span class="pill">Impact mediu</span>
+            <span class="pill ghost">ROI 9 luni</span>
+          </div>
+          <div class="reco-title">Panouri solare + storage</div>
+          <p>Acoperi 28% din consum, reduci emisiile si stabilizezi costurile.</p>
+        </div>
+        <div class="reco-card reveal" data-delay="200">
+          <div class="reco-row">
+            <span class="pill">Impact mare</span>
+            <span class="pill ghost">Cost mediu</span>
+          </div>
+          <div class="reco-title">Reciclare apa gri</div>
+          <p>Recuperezi pana la 18% din apa pentru utilizari non-potabile.</p>
+        </div>
+      </div>
+    </section>
     <!-- GAMEPLAY / EARLY ACCESS -->
     <section class="section">
       <div class="max-w-5xl mx-auto px-4 grid gap-6 md:grid-cols-2 items-center">
@@ -149,12 +308,11 @@
       </div>
     </section>
 
-
     <!-- FEATURES + SLIDER -->
     <section id="features" class="section">
       <div class="section-head">
         <h2>Game Features</h2>
-        <p>Economy gameplay first — Web3 comes after the core loop is fun.</p>
+        <p>Economy gameplay first - Web3 comes after the core loop is fun.</p>
       </div>
 
       <div class="grid3">
@@ -171,7 +329,7 @@
         <div class="card">
           <div class="card-title">Player-Owned Assets</div>
           <div class="card-text">
-            Buildings, workers, and items live in your inventory (“bag”). Place them on the map or trade them. Later: export on-chain as NFTs.
+            Buildings, workers, and items live in your inventory ("bag"). Place them on the map or trade them. Later: export on-chain as NFTs.
           </div>
           <div class="tagrow">
             <span class="tag">Inventory</span><span class="tag">Trading</span><span class="tag">Withdraw</span>
@@ -239,7 +397,6 @@
         <div class="slider-dots" id="sliderDots" aria-label="slider dots"></div>
       </div>
     </section>
-
     <!-- ECONOMY -->
     <section id="economy" class="section">
       <div class="section-head">
@@ -272,7 +429,7 @@
           <div class="mini-grid">
             <div class="mini-card">
               <div class="mini-k">Listings</div>
-              <div class="mini-v">Items &bull; Workers &bull; Buildings</div>
+              <div class="mini-v">Items - Workers - Buildings</div>
             </div>
             <div class="mini-card">
               <div class="mini-k">Fees</div>
@@ -353,7 +510,6 @@
         </div>
       </div>
     </section>
-
     <!-- MERGE -->
     <section id="merge" class="section">
       <div class="section-head">
@@ -445,7 +601,7 @@
             <ul>
               <li><b>Seed:</b> cliff 3 months, vest 18 months</li>
               <li><b>Private:</b> cliff 2 months, vest 12 months</li>
-              <li><b>Public:</b> small TGE, short vest 3–6 months</li>
+              <li><b>Public:</b> small TGE, short vest 3-6 months</li>
               <li><b>Team:</b> cliff 12 months, vest 36 months</li>
             </ul>
           </div>
