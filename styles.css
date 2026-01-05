@@ -946,7 +946,7 @@ a:hover{ color:var(--accent); text-decoration:underline; text-decoration-color:v
 }
 
 /* Hero slider (fullscreen) */
-.hero {
+.hero-slider {
   position: relative;
   display: flex;
   align-items: center;
@@ -959,21 +959,14 @@ a:hover{ color:var(--accent); text-decoration:underline; text-decoration-color:v
   overflow: hidden;
 }
 
-@keyframes heroBg {
-  0%   { background-image: url("/bag1.jpg"); }
-  33%  { background-image: url("/bag2.jpg"); }
-  66%  { background-image: url("/bag3.jpg"); }
-  100% { background-image: url("/bag1.jpg"); }
-}
-
-.hero-overlay {
+.hero-slider .hero-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.45);
   z-index: 1;
 }
 
-.hero-content {
+.hero-slider .hero-content {
   position: relative;
   z-index: 2;
   height: 100%;
@@ -986,19 +979,19 @@ a:hover{ color:var(--accent); text-decoration:underline; text-decoration-color:v
   padding: 0 20px;
 }
 
-.hero-content h1 {
+.hero-slider .hero-content h1 {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
   margin-bottom: 12px;
 }
 
-.hero-content p {
+.hero-slider .hero-content p {
   font-size: 1.2rem;
   max-width: 700px;
   opacity: 0.9;
 }
 
-.hero-actions {
+.hero-slider .hero-actions {
   margin-top: 28px;
   display: flex;
   gap: 16px;
@@ -1021,6 +1014,13 @@ a:hover{ color:var(--accent); text-decoration:underline; text-decoration-color:v
   border: 2px solid rgba(255,255,255,0.4);
   border-radius: 10px;
   cursor: pointer;
+}
+
+@keyframes heroBg {
+  0%   { background-image: url("/bag1.jpg"); }
+  33%  { background-image: url("/bag2.jpg"); }
+  66%  { background-image: url("/bag3.jpg"); }
+  100% { background-image: url("/bag1.jpg"); }
 }
 
 /* Page loader */
