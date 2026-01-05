@@ -1038,6 +1038,9 @@ a:hover{ color:var(--accent); text-decoration:underline; text-decoration-color:v
   color: #fff;
   transition: opacity .35s ease, visibility .35s ease;
 }
+.page-loader.auto-hide{
+  animation: loaderAutoHide 4s ease forwards;
+}
 .page-loader.hide{
   opacity: 0;
   visibility: hidden;
@@ -1061,4 +1064,8 @@ a:hover{ color:var(--accent); text-decoration:underline; text-decoration-color:v
 @keyframes loaderPulse{
   0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
   40% { transform: scale(1.15); opacity: 1; }
+}
+@keyframes loaderAutoHide{
+  0%, 70% { opacity: 1; visibility: visible; }
+  100% { opacity: 0; visibility: hidden; pointer-events: none; }
 }

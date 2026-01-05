@@ -9,6 +9,23 @@ window.addEventListener("load", () => {
     setTimeout(() => loader.remove(), 500);
   }
 });
+// Extra fallback hide after DOM ready + 4s
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    const loader = document.getElementById("pageLoader");
+    if (loader) {
+      loader.classList.add("hide");
+      setTimeout(() => loader.remove(), 500);
+    }
+  }, 1200);
+});
+setTimeout(() => {
+  const loader = document.getElementById("pageLoader");
+  if (loader) {
+    loader.classList.add("hide");
+    setTimeout(() => loader.remove(), 500);
+  }
+}, 4000);
 
 const $ = (q, el=document) => el.querySelector(q);
 const $$ = (q, el=document) => [...el.querySelectorAll(q)];

@@ -15,7 +15,7 @@
 
 <body>
   <!-- Page loader -->
-  <div id="pageLoader" class="page-loader" aria-live="polite">
+  <div id="pageLoader" class="page-loader auto-hide" aria-live="polite">
     <div class="page-loader-dot"></div>
     <div class="page-loader-dot"></div>
     <div class="page-loader-dot"></div>
@@ -1185,14 +1185,18 @@
     // Smooth scroll + sidebar active state + slider + modal
     console.log("EcoSim Site V2");
 
-    // Loader hide on load (fallback if app.js not loaded)
-    window.addEventListener("load", () => {
+    function hideLoader() {
       const loader = document.getElementById("pageLoader");
-      if (loader) {
-        loader.classList.add("hide");
-        setTimeout(() => loader.remove(), 500);
-      }
+      if (!loader) return;
+      loader.classList.add("hide");
+      setTimeout(() => loader.remove(), 600);
+    }
+    // Hide on load + timeouts (fallbacks)
+    window.addEventListener("load", hideLoader);
+    document.addEventListener("DOMContentLoaded", () => {
+      setTimeout(hideLoader, 1200); // in case load is delayed
     });
+    setTimeout(hideLoader, 4000); // hard fallback
 
     const $ = (q, el=document) => el.querySelector(q);
     const $$ = (q, el=document) => [...el.querySelectorAll(q)];
