@@ -1,6 +1,15 @@
 // Smooth scroll + sidebar active state + slider + modal
 console.log("EcoSim Site V1");
 
+// Loader hide on load
+window.addEventListener("load", () => {
+  const loader = document.getElementById("pageLoader");
+  if (loader) {
+    loader.classList.add("hide");
+    setTimeout(() => loader.remove(), 500);
+  }
+});
+
 const $ = (q, el=document) => el.querySelector(q);
 const $$ = (q, el=document) => [...el.querySelectorAll(q)];
 
