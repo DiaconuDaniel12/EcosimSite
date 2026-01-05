@@ -44,29 +44,32 @@
   <aside class="side">
     <div class="side-inner">
       <div class="side-group">
-        <button class="side-item active" data-target="top">
-          <span class="ico">-</span><span>Top</span>
+        <button class="side-item active" data-target="tab-1-home" title="Tab 1 Home">
+          <span class="ico">1</span><span>Home</span>
         </button>
-        <button class="side-item" data-target="features">
-          <span class="ico">-</span><span>Game Features</span>
+        <button class="side-item" data-target="tab-2-game" title="Tab 2 Game">
+          <span class="ico">2</span><span>Game</span>
         </button>
-        <button class="side-item" data-target="economy">
-          <span class="ico">-</span><span>Decentralized Economy</span>
+        <button class="side-item" data-target="tab-3-market" title="Tab 3 Marketplace">
+          <span class="ico">3</span><span>EcoMarket</span>
         </button>
-        <button class="side-item" data-target="craft">
-          <span class="ico">-</span><span>Crafting & Production</span>
+        <button class="side-item soon" data-target="tab-3-market" data-soon="true" title="EcoWallet Coming Soon">
+          <span class="ico">4</span><span>EcoWallet</span>
         </button>
-        <button class="side-item" data-target="merge">
-          <span class="ico">-</span><span>Merge / Upgrade</span>
+        <button class="side-item soon" data-target="tab-3-market" data-soon="true" title="EcoSwap Coming Soon">
+          <span class="ico">5</span><span>EcoSwap</span>
         </button>
-        <button class="side-item" data-target="token">
-          <span class="ico">-</span><span>ECO Token</span>
+        <button class="side-item soon" data-target="tab-3-market" data-soon="true" title="EcoDex Coming Soon">
+          <span class="ico">6</span><span>EcoDex</span>
         </button>
-        <button class="side-item" data-target="roadmap">
-          <span class="ico">-</span><span>Roadmap</span>
+        <button class="side-item" data-target="tab-5-staking" title="Tab 5 Staking">
+          <span class="ico">7</span><span>Staking</span>
         </button>
-        <button class="side-item" data-target="faq">
-          <span class="ico">-</span><span>FAQ</span>
+        <button class="side-item" data-target="tab-7-resources" title="Tab 7 Docs">
+          <span class="ico">8</span><span>Docs</span>
+        </button>
+        <button class="side-item" data-target="tab-8-community" title="Tab 8 Community">
+          <span class="ico">9</span><span>Community</span>
         </button>
       </div>
 
@@ -85,6 +88,442 @@
 
   <!-- Main -->
   <main class="main">
+    <!-- Tabs bar -->
+    <nav class="tabs-bar" aria-label="Primary tabs">
+      <button class="tabbtn" data-target="tab-1-home"><span class="badge">Tab 1</span>Home</button>
+      <button class="tabbtn" data-target="tab-2-game"><span class="badge">Tab 2</span>Game</button>
+      <button class="tabbtn" data-target="tab-3-market"><span class="badge">Tab 3</span>Marketplace</button>
+      <button class="tabbtn" data-target="tab-4-buy"><span class="badge">Tab 4</span>Buy</button>
+      <button class="tabbtn" data-target="tab-5-staking"><span class="badge">Tab 5</span>Staking</button>
+      <button class="tabbtn" data-target="tab-6-tokenomics"><span class="badge">Tab 6</span>Tokenomics</button>
+      <button class="tabbtn" data-target="tab-7-resources"><span class="badge">Tab 7</span>Docs</button>
+      <button class="tabbtn" data-target="tab-8-community"><span class="badge">Tab 8</span>Community</button>
+    </nav>
+
+    <!-- TAB 1: HOME -->
+    <section id="tab-1-home" class="section hero-shell block-card">
+      <div class="SectionBadge">Tab 1 • Home</div>
+      <div class="hero-shell-bg">
+        <div class="hero-layer image"></div>
+        <div class="hero-layer tint"></div>
+      </div>
+      <div class="hero-grid">
+        <div class="hero-col">
+          <div class="hero-kicker">Early Access - Economy-first</div>
+          <h1 class="hero-heading">Simuleaza impactul ecologic al deciziilor tale</h1>
+          <p class="hero-sub">
+            Alege un scenariu, ajusteaza parametrii si vezi cum se schimba emisiile de CO2, consumul de apa si costurile.
+            Totul in 2 minute, fara cont.
+          </p>
+          <div class="hero-cta-row">
+            <button class="btn primary disabled" data-soon="true">Launch Game (Coming Soon)</button>
+            <button class="btn ghost disabled" data-soon="true">View Analytics (Coming Soon)</button>
+            <div class="hero-meta">V1.0 - tracking activ - mobile ready</div>
+          </div>
+          <div class="hero-stats-row">
+            <div class="pill chip">Economie simulata</div>
+            <div class="pill chip ghost">ECO sinks & rewards</div>
+            <div class="pill chip ghost">Merge-to-upgrade</div>
+          </div>
+        </div>
+        <div class="hero-col hero-right">
+          <div class="sim-card reveal">
+            <div class="CardBadge">1.1.0</div>
+            <div class="sim-head">
+              <div>
+                <div class="sim-title">Rezultat rapid</div>
+                <div class="sim-sub">Scenariu: Oras mic, energie mixta</div>
+              </div>
+              <span class="pill ghost">Live</span>
+            </div>
+            <div class="sim-grid">
+              <div class="sim-metric">
+                <div class="sim-k">Emisii CO2</div>
+                <div class="sim-v">-18%</div>
+                <div class="sim-trend good">+ eficienta solar</div>
+              </div>
+              <div class="sim-metric">
+                <div class="sim-k">Consum apa</div>
+                <div class="sim-v">-9%</div>
+                <div class="sim-trend ok">optimizare greywater</div>
+              </div>
+              <div class="sim-metric">
+                <div class="sim-k">Cost lunar</div>
+                <div class="sim-v">$24.3K</div>
+                <div class="sim-trend neutral">+1.2% vs baseline</div>
+              </div>
+            </div>
+            <div class="sim-chart">
+              <div class="bar" style="--v:62%"><span>CO2</span></div>
+              <div class="bar" style="--v:48%"><span>Apa</span></div>
+              <div class="bar" style="--v:55%"><span>Cost</span></div>
+              <div class="bar" style="--v:38%"><span>Deseuri</span></div>
+            </div>
+            <div class="sim-foot">
+              <span class="pill">Recomandari noi</span>
+              <a class="pill ghost" href="#recommendations">Vezi actiuni</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mini-stats">
+        <div class="mini-stat">
+          <div class="CardBadge">1.1.1</div>
+          <div class="mini-k">Active players</div>
+          <div class="mini-v">10,234</div>
+        </div>
+        <div class="mini-stat">
+          <div class="CardBadge">1.1.2</div>
+          <div class="mini-k">TVL</div>
+          <div class="mini-v">$2.5M</div>
+        </div>
+        <div class="mini-stat">
+          <div class="CardBadge">1.1.3</div>
+          <div class="mini-k">Daily Volume</div>
+          <div class="mini-v">$500K</div>
+        </div>
+        <div class="mini-stat">
+          <div class="CardBadge">1.1.4</div>
+          <div class="mini-k">NFTs minted</div>
+          <div class="mini-v">5K+</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 1.2 Products -->
+    <section class="section block-card" id="tab-1-products">
+      <div class="SectionBadge">Tab 1.2 • Products</div>
+      <div class="grid3">
+        <div class="card">
+          <div class="CardBadge">1.2.1</div>
+          <div class="card-title">EcoWallet</div>
+          <div class="card-text">Wallet + inventory pentru NFT Buildings/Workers/Items.</div>
+          <ul class="list">
+            <li class="li"><span class="li-dot"></span><div>Bag cu asset-uri</div></li>
+            <li class="li"><span class="li-dot"></span><div>Plasezi pe harta</div></li>
+            <li class="li"><span class="li-dot"></span><div>Transfer / retragere</div></li>
+          </ul>
+          <div class="cta-row">
+            <button class="btn primary disabled" data-soon="true">Launch App</button>
+            <a class="btn ghost" href="#tab-7-resources">Learn more</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="CardBadge">1.2.2</div>
+          <div class="card-title">EcoSwap</div>
+          <div class="card-text">Swap ECO + token-uri in-game.</div>
+          <ul class="list">
+            <li class="li"><span class="li-dot"></span><div>Swap instant</div></li>
+            <li class="li"><span class="li-dot"></span><div>Rute optimizate</div></li>
+            <li class="li"><span class="li-dot"></span><div>Taxe mici</div></li>
+          </ul>
+          <div class="cta-row">
+            <button class="btn primary disabled" data-soon="true">Launch App</button>
+            <a class="btn ghost" href="#tab-7-resources">Learn more</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="CardBadge">1.2.3</div>
+          <div class="card-title">EcoMarket</div>
+          <div class="card-text">Marketplace P2P pentru Buildings/Workers/Items (NFT).</div>
+          <ul class="list">
+            <li class="li"><span class="li-dot"></span><div>Listare rapida</div></li>
+            <li class="li"><span class="li-dot"></span><div>Escrow</div></li>
+            <li class="li"><span class="li-dot"></span><div>Auctiuni</div></li>
+          </ul>
+          <div class="cta-row">
+            <button class="btn primary disabled" data-soon="true">Launch App</button>
+            <a class="btn ghost" href="#tab-7-resources">Learn more</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="CardBadge">1.2.4</div>
+          <div class="card-title">EcoDex</div>
+          <div class="card-text">Analytics, pret, volum, holders.</div>
+          <ul class="list">
+            <li class="li"><span class="li-dot"></span><div>Grafice pret</div></li>
+            <li class="li"><span class="li-dot"></span><div>Volume & LP</div></li>
+            <li class="li"><span class="li-dot"></span><div>Holder distribution</div></li>
+          </ul>
+          <div class="cta-row">
+            <button class="btn primary disabled" data-soon="true">Launch App</button>
+            <a class="btn ghost" href="#tab-7-resources">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: GAME -->
+    <section id="tab-2-game" class="section block-card">
+      <div class="SectionBadge">Tab 2 • Game</div>
+      <div class="grid3">
+        <div class="card">
+          <div class="CardBadge">2.1.1</div>
+          <div class="card-title">Workers</div>
+          <div class="card-text">Tipuri: Investor / Worker / Entrepreneur</div>
+        </div>
+        <div class="card">
+          <div class="CardBadge">2.1.2</div>
+          <div class="card-title">Level cap 30</div>
+          <div class="card-text">Workerii si cladirile cresc pana la lvl 30.</div>
+        </div>
+        <div class="card">
+          <div class="CardBadge">2.1.3</div>
+          <div class="card-title">Fusion / Stars</div>
+          <div class="card-text">La lvl 30: 2 -> 1 star mai mare, reduce supply NFT.</div>
+        </div>
+      </div>
+      <div class="grid3">
+        <div class="card">
+          <div class="CardBadge">2.2.1</div>
+          <div class="card-title">Star gating</div>
+          <div class="card-text">Cladiri de X stele cer worker X stele.</div>
+        </div>
+        <div class="card">
+          <div class="CardBadge">2.2.2</div>
+          <div class="card-title">Talents</div>
+          <div class="card-text">Talente descoperite contra fee, bonus pe tip fabrica.</div>
+        </div>
+        <div class="card">
+          <div class="CardBadge">2.2.3</div>
+          <div class="card-title">Slots</div>
+          <div class="card-text">Cladirile au slot cap pentru workers.</div>
+        </div>
+      </div>
+      <div class="grid3">
+        <div class="card">
+          <div class="CardBadge">2.3.1</div>
+          <div class="card-title">Inventory / Bag</div>
+          <div class="card-text">Cladiri/workers/items in bag, plasabile pe harta sau transfer.</div>
+        </div>
+        <div class="card">
+          <div class="CardBadge">2.3.2</div>
+          <div class="card-title">Market building</div>
+          <div class="card-text">Cumparari/vanzari assets.</div>
+        </div>
+        <div class="card">
+          <div class="CardBadge">2.3.3</div>
+          <div class="card-title">Interior maps</div>
+          <div class="card-text">Intri in cladiri (scene interior) pentru management.</div>
+        </div>
+      </div>
+      <div class="card wide">
+        <div class="CardBadge">2.4.1</div>
+        <h3>Progression</h3>
+        <div class="timeline">
+          <div class="step">
+            <div class="step-n">1</div>
+            <div class="step-b">
+              <div class="step-t">Build</div>
+              <div class="step-d">Place buildings & slots.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">2</div>
+            <div class="step-b">
+              <div class="step-t">Assign</div>
+              <div class="step-d">Workers produc input.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">3</div>
+            <div class="step-b">
+              <div class="step-t">Craft</div>
+              <div class="step-d">Retete + bonusuri.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">4</div>
+            <div class="step-b">
+              <div class="step-t">Sell / Reinvest</div>
+              <div class="step-d">Upgrade & fuse at lvl 30.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: MARKETPLACE -->
+    <section id="tab-3-market" class="section block-card">
+      <div class="SectionBadge">Tab 3 • Marketplace</div>
+      <div class="card wide">
+        <div class="CardBadge">3.1.0</div>
+        <div class="cta-row">
+          <input class="input" placeholder="Search listings (Coming Soon)" disabled />
+          <div class="pill ghost disabled" data-soon="true">Filter</div>
+        </div>
+        <div class="grid3">
+          <div class="card ghost">
+            <div class="CardBadge">3.1.1</div>
+            <div class="card-title">Listing: Building</div>
+            <div class="card-text">Coming Soon</div>
+          </div>
+          <div class="card ghost">
+            <div class="CardBadge">3.1.2</div>
+            <div class="card-title">Listing: Worker</div>
+            <div class="card-text">Coming Soon</div>
+          </div>
+          <div class="card ghost">
+            <div class="CardBadge">3.1.3</div>
+            <div class="card-title">Listing: Item</div>
+            <div class="card-text">Coming Soon</div>
+          </div>
+        </div>
+        <button class="btn primary" data-soon="true">Connect wallet to join waitlist</button>
+      </div>
+    </section>
+
+    <!-- TAB 4: BUY -->
+    <section id="tab-4-buy" class="section block-card">
+      <div class="SectionBadge">Tab 4 • Buy</div>
+      <div class="card wide">
+        <div class="CardBadge">4.1.1</div>
+        <h3>Buy ECO (USDC on Solana)</h3>
+        <p>Open the dedicated buy page. Status read-only aici.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="https://ecobuy-two.vercel.app/" target="_blank" rel="noreferrer noopener">Open Buy Page</a>
+          <button class="btn ghost disabled" data-soon="true">Status (Coming Soon)</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: STAKING -->
+    <section id="tab-5-staking" class="section block-card">
+      <div class="SectionBadge">Tab 5 • Staking</div>
+      <div class="card wide">
+        <div class="CardBadge">5.1.1</div>
+        <h3>Stake $ECO</h3>
+        <p>SINGLE login = wallet connect, fara user/pass. Staking rewards, lock, tiers (Coming Soon).</p>
+        <div class="cta-row">
+          <button class="btn primary" data-soon="true">Connect Wallet</button>
+          <button class="btn ghost disabled" data-soon="true">Stake (Coming Soon)</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 6: TOKENOMICS -->
+    <section id="tab-6-tokenomics" class="section block-card">
+      <div class="SectionBadge">Tab 6 • Tokenomics</div>
+      <div class="card wide">
+        <div class="CardBadge">6.1.1</div>
+        <h3>Total Supply</h3>
+        <p>1,000,000,000 ECO</p>
+      </div>
+      <div class="grid3">
+        <div class="card">
+          <div class="CardBadge">6.1.2</div>
+          <div class="card-title">Rewards (Play & Earn)</div>
+          <div class="meter"><span style="width:30%"></span></div>
+          <div class="card-text">Placeholder procent</div>
+        </div>
+        <div class="card">
+          <div class="CardBadge">6.1.3</div>
+          <div class="card-title">Liquidity</div>
+          <div class="meter"><span style="width:22%"></span></div>
+          <div class="card-text">Placeholder procent</div>
+        </div>
+        <div class="card">
+          <div class="CardBadge">6.1.4</div>
+          <div class="card-title">Team / Development</div>
+          <div class="meter"><span style="width:15%"></span></div>
+          <div class="card-text">Placeholder procent</div>
+        </div>
+        <div class="card">
+          <div class="CardBadge">6.1.5</div>
+          <div class="card-title">Ecosystem / Treasury</div>
+          <div class="meter"><span style="width:33%"></span></div>
+          <div class="card-text">Placeholder procent</div>
+        </div>
+      </div>
+      <div class="card wide">
+        <div class="CardBadge">6.1.6</div>
+        <h3>Vesting summary</h3>
+        <ul>
+          <li>TGE + cliff + linear (placeholder)</li>
+          <li>Team: cliff + linear unlock</li>
+          <li>Rewards: emission cap + sinks</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TAB 7: RESOURCES / DOCS -->
+    <section id="tab-7-resources" class="section block-card">
+      <div class="SectionBadge">Tab 7 • Resources / Docs</div>
+      <div class="grid2">
+        <div class="card">
+          <div class="CardBadge">7.1.1</div>
+          <div class="card-title">Documentation</div>
+          <a class="btn ghost" href="#" aria-disabled="true">Open (placeholder)</a>
+        </div>
+        <div class="card">
+          <div class="CardBadge">7.1.2</div>
+          <div class="card-title">Whitepaper</div>
+          <a class="btn ghost" href="#" aria-disabled="true">Open (placeholder)</a>
+        </div>
+        <div class="card">
+          <div class="CardBadge">7.1.3</div>
+          <div class="card-title">Tokenomics</div>
+          <a class="btn ghost" href="#tab-6-tokenomics">Jump to Tab 6</a>
+        </div>
+        <div class="card">
+          <div class="CardBadge">7.1.4</div>
+          <div class="card-title">Roadmap</div>
+          <a class="btn ghost" href="#roadmap">See roadmap</a>
+        </div>
+        <div class="card">
+          <div class="CardBadge">7.1.5</div>
+          <div class="card-title">Security</div>
+          <a class="btn ghost" href="#" aria-disabled="true">Open (placeholder)</a>
+        </div>
+        <div class="card">
+          <div class="CardBadge">7.1.6</div>
+          <div class="card-title">FAQ</div>
+          <a class="btn ghost" href="#faq">Jump to FAQ</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 8: COMMUNITY -->
+    <section id="tab-8-community" class="section block-card">
+      <div class="SectionBadge">Tab 8 • Community</div>
+      <div class="grid2">
+        <div class="card">
+          <div class="CardBadge">8.1.1</div>
+          <div class="card-title">Twitter</div>
+          <a class="btn ghost" href="https://x.com/EcoSimProject" target="_blank" rel="noreferrer noopener">Open</a>
+        </div>
+        <div class="card">
+          <div class="CardBadge">8.1.2</div>
+          <div class="card-title">Discord</div>
+          <button class="btn ghost disabled" data-soon="true">Coming Soon</button>
+        </div>
+        <div class="card">
+          <div class="CardBadge">8.1.3</div>
+          <div class="card-title">Telegram</div>
+          <a class="btn ghost" href="https://t.me/+AGp5RonwQMJlODJk" target="_blank" rel="noreferrer noopener">Open</a>
+        </div>
+        <div class="card">
+          <div class="CardBadge">8.1.4</div>
+          <div class="card-title">Medium</div>
+          <button class="btn ghost disabled" data-soon="true">Coming Soon</button>
+        </div>
+      </div>
+      <button class="btn primary disabled" data-soon="true">Join waitlist (Coming Soon)</button>
+    </section>
+
+    <!-- COMING SOON MODAL -->
+    <div class="modal" id="soonModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close="true"></div>
+      <div class="modal-card">
+        <div class="modal-head">
+          <div class="modal-title">Coming Soon</div>
+          <button class="x" data-close="true">Close</button>
+        </div>
+        <div class="modal-body">
+          Conecteaza wallet-ul ca sa fii notificat la lansare.
+        </div>
+      </div>
+    </div>
     <!-- HERO -->
     <section id="top" class="hero-shell">
       <div class="hero-shell-bg">
@@ -800,7 +1239,113 @@
   </main>
 
 
-  <script src="app.js"></script>
+  <script>
+    // Smooth scroll + sidebar active state + slider + modal
+    console.log("EcoSim Site V1");
+
+    const $ = (q, el=document) => el.querySelector(q);
+    const $$ = (q, el=document) => [...el.querySelectorAll(q)];
+
+    const sections = [
+      "tab-1-home","tab-1-products","tab-2-game","tab-3-market","tab-4-buy",
+      "tab-5-staking","tab-6-tokenomics","tab-7-resources","tab-8-community"
+    ];
+
+    function scrollToId(id){
+      const el = document.getElementById(id);
+      if(!el) return;
+      el.scrollIntoView({behavior:"smooth", block:"start"});
+    }
+
+    function handleNav(btn){
+      $$(".side-item").forEach(b=>b.classList.remove("active"));
+      btn.classList.add("active");
+      const target = btn.dataset.target;
+      scrollToId(target);
+      if(btn.dataset.soon) openSoon();
+    }
+
+    $$(".side-item").forEach(btn=>{
+      btn.addEventListener("click", ()=> handleNav(btn));
+    });
+    $$(".tabbtn").forEach(btn=>{
+      btn.addEventListener("click", ()=> scrollToId(btn.dataset.target));
+    });
+
+    function setActiveByScroll(){
+      const y = window.scrollY;
+      let current = sections[0];
+      for(const id of sections){
+        const el = document.getElementById(id);
+        if(!el) continue;
+        const top = el.offsetTop - 160;
+        if(y >= top) current = id;
+      }
+      $$(".side-item").forEach(b=>{
+        b.classList.toggle("active", b.dataset.target === current);
+      });
+    }
+    window.addEventListener("scroll", setActiveByScroll, {passive:true});
+    setActiveByScroll();
+
+    // Slider (legacy)
+    const slides = $$(".slide", $("#sliderFrame"));
+    const dotsWrap = $("#sliderDots");
+    let idx = 0;
+
+    function renderDots(){
+      dotsWrap.innerHTML = "";
+      slides.forEach((_, i)=>{
+        const d = document.createElement("button");
+        d.className = "dotbtn" + (i===idx ? " active" : "");
+        d.setAttribute("aria-label", `slide ${i+1}`);
+        d.addEventListener("click", ()=>setSlide(i));
+        dotsWrap.appendChild(d);
+      });
+    }
+    function setSlide(i){
+      idx = (i + slides.length) % slides.length;
+      slides.forEach((s, n)=>s.classList.toggle("is-active", n===idx));
+      if(dotsWrap) renderDots();
+    }
+    if(slides.length){
+      renderDots();
+      setSlide(0);
+      let timer = setInterval(()=>setSlide(idx+1), 6500);
+      ["mouseenter","focusin"].forEach(ev=>{
+        $("#sliderFrame")?.addEventListener(ev, ()=>{ clearInterval(timer); });
+      });
+      ["mouseleave","focusout"].forEach(ev=>{
+        $("#sliderFrame")?.addEventListener(ev, ()=>{ timer = setInterval(()=>setSlide(idx+1), 6500); });
+      });
+    }
+
+    // Coming soon modal
+    const soonModal = $("#soonModal");
+    function openSoon(){
+      soonModal?.classList.add("show");
+      soonModal?.setAttribute("aria-hidden","false");
+    }
+    function closeSoon(){
+      soonModal?.classList.remove("show");
+      soonModal?.setAttribute("aria-hidden","true");
+    }
+    document.addEventListener("click", (e)=>{
+      const t = e.target;
+      if(t?.dataset?.soon) { openSoon(); e.preventDefault(); }
+      if(t?.dataset?.close) closeSoon();
+    });
+    soonModal?.addEventListener("click", (e)=>{
+      if(e.target && e.target.dataset.close) closeSoon();
+    });
+    window.addEventListener("keydown", (e)=>{
+      if(e.key === "Escape") closeSoon();
+    });
+
+    // Footer year
+    const year = $("#year");
+    if (year) year.textContent = new Date().getFullYear();
+  </script>
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
     import { getFirestore, doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
