@@ -944,3 +944,81 @@ a:hover{ color:var(--accent); text-decoration:underline; text-decoration-color:v
   .topbar-inner{ padding-left: 14px; }
   .hero-title{ font-size: 38px; }
 }
+
+/* Hero slider (fullscreen) */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  animation: heroBg 18s infinite ease-in-out;
+  overflow: hidden;
+}
+
+@keyframes heroBg {
+  0%   { background-image: url("/bag1.jpg"); }
+  33%  { background-image: url("/bag2.jpg"); }
+  66%  { background-image: url("/bag3.jpg"); }
+  100% { background-image: url("/bag1.jpg"); }
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  opacity: 0.9;
+}
+
+.hero-actions {
+  margin-top: 28px;
+  display: flex;
+  gap: 16px;
+}
+
+.btn-primary {
+  padding: 14px 28px;
+  background: #f5c542;
+  color: #000;
+  font-weight: 700;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  padding: 14px 28px;
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-radius: 10px;
+  cursor: pointer;
+}
