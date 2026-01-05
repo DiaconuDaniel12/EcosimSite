@@ -1,5 +1,5 @@
 // Smooth scroll + sidebar active state + slider + modal
-console.log("EcoSim Site V1");
+console.log("EcoSim Site app.js v1.2 loaded (hero slider + loader)");
 
 // Loader hide on load
 window.addEventListener("load", () => {
@@ -47,36 +47,39 @@ window.addEventListener("scroll", setActiveByScroll, {passive:true});
 setActiveByScroll();
 
 // Slider
-const slides = $$(".slide", $("#sliderFrame"));
+const sliderFrame = $("#sliderFrame");
 const dotsWrap = $("#sliderDots");
-let idx = 0;
+const slides = sliderFrame ? $$(".slide", sliderFrame) : [];
+if (sliderFrame && dotsWrap && slides.length) {
+  let idx = 0;
 
-function renderDots(){
-  dotsWrap.innerHTML = "";
-  slides.forEach((_, i)=>{
-    const d = document.createElement("button");
-    d.className = "dotbtn" + (i===idx ? " active" : "");
-    d.setAttribute("aria-label", `slide ${i+1}`);
-    d.addEventListener("click", ()=>setSlide(i));
-    dotsWrap.appendChild(d);
+  function renderDots(){
+    dotsWrap.innerHTML = "";
+    slides.forEach((_, i)=>{
+      const d = document.createElement("button");
+      d.className = "dotbtn" + (i===idx ? " active" : "");
+      d.setAttribute("aria-label", `slide ${i+1}`);
+      d.addEventListener("click", ()=>setSlide(i));
+      dotsWrap.appendChild(d);
+    });
+  }
+  function setSlide(i){
+    idx = (i + slides.length) % slides.length;
+    slides.forEach((s, n)=>s.classList.toggle("is-active", n===idx));
+    renderDots();
+  }
+  renderDots();
+  setSlide(0);
+
+  // Auto-advance
+  let timer = setInterval(()=>setSlide(idx+1), 6500);
+  ["mouseenter","focusin"].forEach(ev=>{
+    sliderFrame.addEventListener(ev, ()=>{ clearInterval(timer); });
+  });
+  ["mouseleave","focusout"].forEach(ev=>{
+    sliderFrame.addEventListener(ev, ()=>{ timer = setInterval(()=>setSlide(idx+1), 6500); });
   });
 }
-function setSlide(i){
-  idx = (i + slides.length) % slides.length;
-  slides.forEach((s, n)=>s.classList.toggle("is-active", n===idx));
-  renderDots();
-}
-renderDots();
-setSlide(0);
-
-// Auto-advance
-let timer = setInterval(()=>setSlide(idx+1), 6500);
-["mouseenter","focusin"].forEach(ev=>{
-  $("#sliderFrame").addEventListener(ev, ()=>{ clearInterval(timer); });
-});
-["mouseleave","focusout"].forEach(ev=>{
-  $("#sliderFrame").addEventListener(ev, ()=>{ timer = setInterval(()=>setSlide(idx+1), 6500); });
-});
 
 // Modal buy
 const modal = $("#buyModal");
